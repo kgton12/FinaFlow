@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinaFlow.Core.Requests.Transactions
 {
-    public class UpdateTransactionRequest
+    public class UpdateTransactionRequest : Request
     {
         public long Id { get; set; }
 
@@ -20,6 +20,8 @@ namespace FinaFlow.Core.Requests.Transactions
         public long CategoryId { get; set; }
 
         [Required(ErrorMessage = "Data invalido")]
-        public DateTime? PaidOrReceived { get; set; }
+        public DateTime? PaidOrReceivedAt { get; set; }
+
+
     }
 }

@@ -3,7 +3,6 @@ using FinaFlow.Core.Handlers;
 using FinaFlow.Core.Models;
 using FinaFlow.Core.Requests.Categories;
 using FinaFlow.Core.Responses;
-using System.Security.Claims;
 
 namespace FinaFlow.Api.Endpoints.Categories
 {

@@ -30,5 +30,5 @@ namespace FinaFlow.Api.Endpoints.Categories
                 ? TypedResults.Ok(result)
                 : TypedResults.BadRequest(result);
         }
-    }    
+    }
 }

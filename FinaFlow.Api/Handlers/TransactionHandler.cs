@@ -75,18 +75,18 @@ namespace FinaFlow.Api.Handlers
             }
             catch (Exception)
             {
-                return new PagedResponse<List<Transaction>?>(null,500,"Não foi possivel determinar a data da transação");
+                return new PagedResponse<List<Transaction>?>(null, 500, "Não foi possivel determinar a data da transação");
             }
 
             try
             {
                 var query = context.Transactions
                     .AsNoTracking()
-                    .Where(t => t.UserId == request.UserId && 
+                    .Where(t => t.UserId == request.UserId &&
                            t.PaidOrReceivedAt >= request.StartDate &&
                            t.PaidOrReceivedAt <= request.EndDate)
                     .OrderBy(t => t.PaidOrReceivedAt);
-                    
+
                 var transactions = await query.Skip((request.PageNumber - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync();
